@@ -19,22 +19,22 @@ export class FirebaseService {
 
   create(contato: Contato){
     return this.firestore.collection(this.PATH)
-    .add({nome: contato.nome, telefone: contato.telefone, uid: contato.id});
+    .add({nome: contato.nome, telefone: contato.telefone, uid: contato.uid});
   }
 
   createWithImage(contato: Contato){
     return this.firestore.collection(this.PATH)
-    .add({nome: contato.nome, telefone: contato.telefone, downloadURL : contato.downloadURL, uid: contato.id});
+    .add({nome: contato.nome, telefone: contato.telefone, downloadURL : contato.downloadURL, uid: contato.uid});
   }
 
   update(contato: Contato, id: string){
     return this.firestore.collection(this.PATH).doc(id)
-    .update({nome: contato.nome, telefone: contato.telefone, uid: contato.id});
+    .update({nome: contato.nome, telefone: contato.telefone, uid: contato.uid});
   }
 
   updateWithImage(contato: Contato, id: string){
     return this.firestore.collection(this.PATH).doc(id)
-    .update({nome: contato.nome, telefone: contato.telefone, downloadURL : contato.downloadURL, uid: contato.id});
+    .update({nome: contato.nome, telefone: contato.telefone, downloadURL : contato.downloadURL, uid: contato.uid});
   }
 
   delete(contato: Contato){
